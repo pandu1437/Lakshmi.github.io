@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+body { color:#ededed; background:linear-gradient(to right, #2b1055, #4b0082); min-height:100vh; scroll-behavior:smooth; }
+
+.header { position:fixed; top:0; left:0; width:100%; padding:20px 10%; display:flex; justify-content:space-between; align-items:center; z-index:100; background: rgba(0,0,0,0.5);}
+.logo { color:#fff; font-size:25px; font-weight:600; text-decoration:none;}
+.navbar a { font-size:16px; color:#fff; text-decoration:none; font-weight:500; margin-left:25px; transition:0.3s;}
+.navbar a:hover { color:#0ef; }
+
+/* HAMBURGER */
+.menu-toggle { display:none; flex-direction:column; cursor:pointer; }
+.menu-toggle span { height:3px; width:25px; background:#0ef; margin:5px 0; border-radius:2px; transition:0.3s; }
+
+.home, .about { width:100%; min-height:100vh; display:flex; align-items:center; padding:0 10%; }
+.home-container, .about-container { display:flex; align-items:center; justify-content:space-between; gap:50px; flex-wrap:wrap; }
+.home .content, .about-content { flex:1; max-width:600px; }
+.home-img, .about-img { flex:1; display:flex; justify-content:center; align-items:center; }
+.home-img img, .about-img img { width:250px; height:250px; border-radius:50%; border:3px solid #0ef; object-fit:cover; transition:transform 0.3s, box-shadow 0.3s; }
+.home-img img:hover, .about-img img:hover { transform: scale(1.05); box-shadow:0 10px 20px rgba(0,238,255,0.5); }
+
+.content h3 { font-size:28px; font-weight:600; }
+.content h1 { font-size:48px; font-weight:700; margin:10px 0; }
+.content p { margin-top:15px; font-size:16px; line-height:1.6; }
+
+.btn-box { display:inline-block; margin-top:20px; padding:12px 30px; color:#fff; background:#0ef; border-radius:50px; font-weight:600; text-decoration:none; transition:0.3s; }
+.btn-box:hover { background:#fff; color:#0ef; transform:translateY(-3px); }
+
+.home-sci a { display:inline-flex; justify-content:center; align-items:center; width:40px; height:40px; border:2px solid #0ef; border-radius:50%; font-size:20px; color:#0ef; text-decoration:none; margin:20px 15px 20px 0; transition:0.4s; }
+.home-sci a:hover { background:#0ef; color:#000; transform:translateY(-5px) scale(1.2); }
+
+.typing { color:#0ef; font-weight:600; border-right:2px solid #0ef; padding-right:5px; animation:blink 0.7s infinite; }
+@keyframes blink { 50% { border-color:transparent; } }
+
+section { padding:80px 10%; }
+section h2 { font-size:32px; margin-bottom:20px; color:#0ef; }
+section p, section li { font-size:16px; margin-bottom:10px; }
+
+.edu-card, .exp-card { background:rgba(255,255,255,0.05); padding:20px; margin-bottom:15px; border-left:4px solid #0ef; border-radius:10px; transition: transform 0.3s, box-shadow 0.3s; }
+.edu-card:hover, .exp-card:hover { transform:translateY(-5px); box-shadow:0 10px 20px rgba(0,238,255,0.3); }
+
+/* SKILLS */
+.skills-container { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
+.skill-card { flex: 1 1 150px; background: rgba(255,255,255,0.05); color: #fff; padding: 20px; border-radius:15px; text-align:center; font-weight:600; opacity:0; transform: translateY(20px); transition: all 0.5s ease;}
+.skill-card.show { opacity:1; transform:translateY(0);}
+.skill-card:hover { transform:translateY(-10px); background:#0ef; color:#000; box-shadow:0 10px 20px rgba(0,238,255,0.5); }
+
+/* PROJECTS */
+.projects-container { display:flex; flex-wrap:wrap; gap:20px; }
+.project-card { flex:1 1 300px; background-size: cover; background-position:center; padding:50px 20px; border-radius:15px; transition: transform 0.3s, box-shadow 0.3s; text-align:center; color:#fff; position:relative; overflow:hidden;}
+.project-card::before { content:""; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); border-radius:15px; z-index:0;}
+.project-card h3, .project-card a { position:relative; z-index:1; font-weight:700; }
+.project-card a { color:#0ef; text-decoration:none; display:inline-block; margin-top:10px; }
+.project-card a:hover { text-decoration:underline; }
+.project-card:hover { transform:scale(1.05); box-shadow:0 15px 30px rgba(0,238,255,0.5); }
+
+/* CERTIFICATIONS */
+.certifications-container { display:flex; flex-wrap:wrap; gap:20px; justify-content:center;}
+.cert-card { flex:1 1 250px; background: rgba(255,255,255,0.05); border-radius:15px; padding:20px; text-align:center; color:#fff; transition: transform 0.3s, box-shadow 0.3s, background 0.3s; position:relative;}
+.cert-card i { font-size:40px; color:#0ef; margin-bottom:15px; }
+.cert-card h3 { font-size:18px; margin-bottom:8px; }
+.cert-card p { font-size:14px; color:#aaa; }
+.cert-card:hover { transform:translateY(-10px); box-shadow:0 10px 25px rgba(0,238,255,0.5); background: rgba(0,238,255,0.1); }
+
+/* ABOUT FIX */
+.about-content { line-height:1.8; font-size:16px; }
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .menu-toggle { display:flex; }
+    .navbar { display:none; flex-direction:column; margin-top:10px; }
+    .navbar a { margin:10px 0; }
+    .home-container, .about-container{ flex-direction:column; text-align:center; }
+    .home-img img, .about-img img{ width:200px; height:200px; }
+    .cert-card, .project-card, .skill-card { width: 80%; margin: auto; }
+}
